@@ -1,0 +1,27 @@
+import random
+
+emojis={'r':'🪨','s':'✂️','p':'📜'}
+choices=('r','p','s')
+while True:
+    userchoice=input('rock,paper,scissor(r/p/s):').lower()
+    if userchoice not in choices:
+        print('Invalid')
+        continue
+    computerchoice=random.choice(choices)
+    
+    print(f'You chose {emojis[userchoice]}')
+    print(f'Computer chose {emojis[computerchoice]}')
+    
+    if userchoice==computerchoice:
+        print('Tie')
+    elif(
+        (userchoice=='r' and computerchoice=='s') or
+        (userchoice=='s' and computerchoice=='p') or
+        (userchoice=='p' and computerchoice=='r')):
+        print('you win')
+    else:
+        print('You Lose')
+    xould_contine=input('Continue?(y/n:)').lower()
+    if xould_contine=='n':
+        break
+    
